@@ -14,19 +14,25 @@ import Entypo from 'react-native-vector-icons/Entypo';
 // screens
 import {HomeScreen, SearchScreen, BookMarkScreen} from '../screens';
 
-export default function RootNavigation() {
+export default function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="BottomNavigation">
-        <Stack.Screen
-          name="BottomNavigation"
-          component={BottomNavigation}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
+      <BottomNavigation />
     </NavigationContainer>
   );
 }
+
+const RootNavigation = () => {
+  return (
+    <Stack.Navigator initialRouteName="BottomNavigation">
+      {/* <Stack.Screen
+        name="BottomNavigation"
+        component={BottomNavigation}
+        options={{headerShown: false}}
+      /> */}
+    </Stack.Navigator>
+  );
+};
 
 const BottomNavigation = () => {
   return (
@@ -39,7 +45,7 @@ const BottomNavigation = () => {
         component={HomeScreen}
         options={{
           // headerShown: false,
-          headerTitle: 'Home',
+          // headerTitle: 'Home',
           tabBarIcon: ({color}) => (
             <Entypo name="home" size={24} color={color} />
           ),
@@ -49,7 +55,7 @@ const BottomNavigation = () => {
         name="SearchScreen"
         component={SearchScreen}
         options={{
-          title: 'Search',
+          // title: 'Search',
           tabBarIcon: ({color}) => (
             <AntDesign name="search1" size={24} color={color} />
           ),
@@ -59,7 +65,7 @@ const BottomNavigation = () => {
         name="BookMarkScreen"
         component={BookMarkScreen}
         options={{
-          title: 'Search',
+          // title: 'Search',
           tabBarIcon: ({color}) => (
             <Entypo name="bookmark" size={24} color={color} />
           ),
