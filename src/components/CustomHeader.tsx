@@ -9,7 +9,7 @@ export const CustomHeader = props => {
       alignItems="center"
       justifyContent="space-between"
       px={3}
-      height="50px"
+      height="60px"
       backgroundColor="white">
       {props.leftElement ? props.leftElement : null}
       {props.centerElement ? props.centerElement : null}

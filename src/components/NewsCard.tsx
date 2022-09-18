@@ -30,9 +30,9 @@ export const NewsCard = props => {
         size="xl"
       />
       <VStack space={4} width="60%">
-        <Text fontSize={15} fontWeight="bold">
+        <Heading fontSize={15} fontWeight="bold">
           {props.item.title}
-        </Text>
+        </Heading>
         <Text fontSize={12} color="muted.500">
           By {props.item.author}
         </Text>

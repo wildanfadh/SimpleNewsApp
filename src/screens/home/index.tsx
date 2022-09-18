@@ -10,6 +10,7 @@ import {
   FlatList,
   Badge,
 } from 'native-base';
+import {useNavigation} from '@react-navigation/native';
 
 const WindowWidth = Dimensions.get('window').width;
 const WindowHeight = Dimensions.get('window').height;
@@ -102,6 +103,7 @@ It’s expected that the monarch butterfly will be placed on the Endangered Spec
 
 export const HomeScreen = () => {
   const [tagSelected, setTagSelected] = useState('Top');
+  const navigation = useNavigation();
 
   return (
     <>
@@ -118,7 +120,7 @@ export const HomeScreen = () => {
             alt="logo image"
           />
           <Text fontSize="md" fontWeight="semibold">
-            News 24
+            Simple News
           </Text>
         </HStack>
         <FlatList
@@ -146,7 +148,10 @@ export const HomeScreen = () => {
           showsVerticalScrollIndicator={false}
           data={news}
           renderItem={({item}) => (
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('DetailNews', item);
+              }}>
               <NewsCard item={item} />
             </TouchableOpacity>
           )}

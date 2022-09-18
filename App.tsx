@@ -30,17 +30,17 @@ const theme = extendTheme({
         italic: 'Roboto-MediumItalic',
       },
       // Add more variants
-      //   700: {
-      //     normal: 'Roboto-Bold',
-      //   },
-      //   800: {
-      //     normal: 'Roboto-Bold',
-      //     italic: 'Roboto-BoldItalic',
-      //   },
-      //   900: {
-      //     normal: 'Roboto-Bold',
-      //     italic: 'Roboto-BoldItalic',
-      //   },
+      700: {
+        normal: 'Roboto-Bold',
+      },
+      800: {
+        normal: 'Roboto-Bold',
+        italic: 'Roboto-BoldItalic',
+      },
+      900: {
+        normal: 'Roboto-Bold',
+        italic: 'Roboto-BoldItalic',
+      },
     },
   },
 
