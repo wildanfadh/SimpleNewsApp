@@ -1,25 +1,16 @@
-import {StyleSheet, View, TouchableOpacity, Dimensions} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 import {
   Box,
-  Stack,
   HStack,
-  VStack,
   Text,
-  Image,
   FlatList,
   Badge,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 
-const WindowWidth = Dimensions.get('window').width;
-const WindowHeight = Dimensions.get('window').height;
-
 // components
 import {NewsCard} from '../../components';
-
-// image
-import newsLogo1 from '../../assets/images/newsLogo1.png';
 
 // data example
 const tags = [
@@ -30,7 +21,7 @@ const tags = [
     title: 'Politics',
   },
   {
-    title: 'Entertiment',
+    title: 'Entertainment',
   },
   {
     title: 'Science',

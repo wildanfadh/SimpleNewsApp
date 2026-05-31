@@ -26,7 +26,7 @@ export default function Navigation() {
 const RootNavigation = () => {
   const navigation = useNavigation();
   // options for stack navigator
-  const stackOptions = title => ({
+  const stackOptions = (title: string) => ({
     headerTitle: title,
     headerTitleStyle: {
       fontSize: 18,

@@ -1,12 +1,10 @@
-import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {
   ScrollView,
   Box,
   Text,
-  Stack,
   HStack,
-  VStack,
   Image,
   Heading,
   Avatar,
@@ -20,16 +18,27 @@ import Feather from 'react-native-vector-icons/Feather';
 // components
 import {CustomHeader} from '../../components';
 
-export const DetailNews = ({route}) => {
+export const DetailNews = ({route}: {route: any}) => {
   const navigation = useNavigation();
   //   console.log('route detail', route);
-  const getFirstChar = str => {
+  const getFirstChar = (str: string): string => {
+    if (!str || str.length === 0) {
+      return '';
+    }
     const firstChars = str
       .split(' ')
       .map(word => word[0])
       .join('');
     return firstChars;
   };
+
+  const params = route?.params || {};
+  const thumbnail = params.thumbnail || '';
+  const title = params.title || 'No Title';
+  const author = params.author || 'Unknown';
+  const created = params.created || '';
+  const content = params.content || 'No content available';
+
   return (
     <>
       <CustomHeader
@@ -51,13 +60,13 @@ export const DetailNews = ({route}) => {
           // maxWidth={300}
           style={{width: '100%', height: 300}}
           source={{
-            uri: `${route.params.thumbnail}`,
+            uri: thumbnail,
           }}
           alt="Alternate Text"
           size="xl"
         />
         <Box my={3} mx={5}>
-          <Heading size="md">{route.params.title}</Heading>
+          <Heading size="md">{title}</Heading>
           <HStack
             space={2}
             my={3}
@@ -71,15 +80,15 @@ export const DetailNews = ({route}) => {
                 //   uri: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
                 // }}
               >
-                <Text>{getFirstChar(route.params.author)}</Text>
+                <Text>{getFirstChar(author)}</Text>
               </Avatar>
-              <Text>{route.params.author}</Text>
+              <Text>{author}</Text>
             </HStack>
-            <Text>{route.params.created}</Text>
+            <Text>{created}</Text>
           </HStack>
         </Box>
         <Box my={3} mx={5}>
-          <Text>{route.params.content}</Text>
+          <Text>{content}</Text>
         </Box>
       </ScrollView>
     </>

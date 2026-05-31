@@ -20,7 +20,7 @@ const WindowHeight = Dimensions.get('window').height;
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 
-export const NewsCard = props => {
+export const NewsCard = (props: {item: any}) => {
   // console.log('props', props.item.title);
 
   return (

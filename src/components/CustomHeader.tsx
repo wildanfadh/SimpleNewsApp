@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import * as React from 'react';
 import {Box, Stack, HStack, VStack, Text} from 'native-base';
 
-export const CustomHeader = props => {
+export const CustomHeader = (props: {leftElement?: React.ReactNode; centerElement?: React.ReactNode; rightElement?: React.ReactNode}) => {
   return (
     <HStack
       space={1}
