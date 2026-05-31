@@ -1,0 +1,94 @@
+# SimpleNewsApp Screenshots Flow
+#
+# Generates screenshots for README documentation
+# Prerequisites:
+# - Android emulator or iOS simulator running
+# - App installed on device
+# - Maestro CLI installed
+
+appId: com.simplenewsapp
+---
+# ==========================================
+# STEP 1: LAUNCH APP & HOME SCREEN
+# ==========================================
+
+- launchApp
+
+# Wait for app to fully load
+- extendedWaitUntil:
+    visible:
+      text: "Simple News"
+    timeout: 15000
+
+# Take screenshot of Home Screen
+- takeScreenshot: screenshots/01-home-screen
+
+# ==========================================
+# STEP 2: SEARCH SCREEN
+# ==========================================
+
+# Navigate to Search tab
+- tapOn:
+    text: "Search"
+
+# Wait for search screen to load
+- extendedWaitUntil:
+    visible:
+      text: "Search"
+    timeout: 5000
+
+# Take screenshot of Search Screen
+- takeScreenshot: screenshots/02-search-screen
+
+# ==========================================
+# STEP 3: BOOKMARK SCREEN
+# ==========================================
+
+# Navigate to Bookmark tab
+- tapOn:
+    text: "Bookmark"
+
+# Wait for bookmark screen to load
+- extendedWaitUntil:
+    visible:
+      text: "Bookmarked"
+    timeout: 5000
+
+# Take screenshot of Bookmark Screen
+- takeScreenshot: screenshots/03-bookmark-screen
+
+# ==========================================
+# STEP 4: DETAIL NEWS SCREEN
+# ==========================================
+
+# Navigate back to Home tab
+- tapOn:
+    text: "Home"
+
+# Wait for home screen
+- extendedWaitUntil:
+    visible:
+      text: "Simple News"
+    timeout: 5000
+
+# Tap on first news item
+- tapOn:
+    text: "Monarch population soars 4,900 percent"
+
+# Wait for detail screen to load
+- extendedWaitUntil:
+    visible:
+      text: "Andy Corbley"
+    timeout: 5000
+
+# Take screenshot of Detail Screen
+- takeScreenshot: screenshots/04-detail-screen
+
+# ==========================================
+# STEP 5: CLEANUP
+# ==========================================
+
+# Go back to home
+- tapOn:
+    text: "Back"
+    optional: true
